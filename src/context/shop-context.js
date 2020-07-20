@@ -11,3 +11,12 @@ export default React.createContext({
   addProductToCart: (product) => {},
   removeProductFromCart: (productId) => {},
 });
+
+/**
+ * 1. We can use this context in this file itself but it is
+ *    better to export this file and use it in other files
+ *
+ * 2. State is actually not required in this file.
+ *    We have written state in this file just for better
+ *    order completion.
+ */

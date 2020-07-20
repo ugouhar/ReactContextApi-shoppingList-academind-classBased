@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-
-import MainNavigation from "../components/MainNavigation";
 import ShopContext from "../context/shop-context";
-// import { addProductToCart } from '../store/actions';
+import MainNavigation from "../components/MainNavigation";
 import "./Products.css";
 
-/**
- * Advantage of ShopContext.Consumer method: works in both class and function based component.
- * Disadvantage : allows access to parts only where we render our JSX i.e, inside the render parts.
- *                Don't have access in lifecycle methods like componentDidMount or constructor methods.
- */
 class ProductsPage extends Component {
   render() {
     return (
@@ -46,17 +39,21 @@ class ProductsPage extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     products: state.products,
-//     cartItemCount: state.cart.
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addProductToCart: product => dispatch(addProductToCart(product))
-//   };
-// };
-
 export default ProductsPage;
+
+/**
+ * 1. context argument in the function inside
+ * ShopContext.Consumer refers to the object
+ * we provided in ShopContext.Provider, so we can
+ * access that object here now.
+ *
+ * 2. Advantage of this method of context is that it
+ * can be used with both class and function base
+ * component
+ *
+ * 3. Disadvantage of this method is that it, can
+ * only be used inside the (context) => {...} i.e,
+ * where we render our JSX code.
+ * So we can't access our context in componentDidMount,
+ * constructor etc.
+ */

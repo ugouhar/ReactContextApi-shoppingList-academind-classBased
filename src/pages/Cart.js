@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import { connect } from 'react-redux';
-
+// import { connect } from "react-redux";
 import ShopContext from "../context/shop-context";
 import MainNavigation from "../components/MainNavigation";
-// import { removeProductFromCart } from '../store/actions';
+// import { removeProductFromCart } from "../store/actions";
 import "./Cart.css";
 
 class CartPage extends Component {
@@ -25,10 +24,10 @@ class CartPage extends Component {
           {this.context.cart.length <= 0 && <p>No Item in the Cart!</p>}
           <ul>
             {this.context.cart.map((cartItem) => (
-              <li key={cartItem.product.id}>
+              <li key={cartItem.id}>
                 <div>
-                  <strong>{cartItem.product.title}</strong> - $
-                  {cartItem.product.price} ({cartItem.quantity})
+                  <strong>{cartItem.title}</strong> - ${cartItem.price} (
+                  {cartItem.quantity})
                 </div>
                 <div>
                   <button
@@ -49,18 +48,18 @@ class CartPage extends Component {
   }
 }
 
-// const mapStateToProps = state => {
+// const mapStateToProps = (state) => {
 //   return {
 //     cartItems: state.cart,
 //     cartItemCount: state.cart.reduce((count, curItem) => {
 //       return count + curItem.quantity;
-//     }, 0)
+//     }, 0),
 //   };
 // };
 
-// const mapDispatchToProps = dispatch => {
+// const mapDispatchToProps = (dispatch) => {
 //   return {
-//     removeProductFromCart: id => dispatch(removeProductFromCart(id))
+//     removeProductFromCart: (id) => dispatch(removeProductFromCart(id)),
 //   };
 // };
 
