@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /bin
+/store
 /.pnp
 .pnp.js
 

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
 import ShopContext from "../context/shop-context";
 import MainNavigation from "../components/MainNavigation";
-// import { removeProductFromCart } from "../store/actions";
 import "./Cart.css";
 
 class CartPage extends Component {
@@ -48,19 +46,11 @@ class CartPage extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     cartItems: state.cart,
-//     cartItemCount: state.cart.reduce((count, curItem) => {
-//       return count + curItem.quantity;
-//     }, 0),
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     removeProductFromCart: (id) => dispatch(removeProductFromCart(id)),
-//   };
-// };
-
 export default CartPage;
+
+/**
+ * Advantage :  With this method we can use context in
+ * componentDidMount, constructor etc.
+ *
+ * Disadvantage: Can be used with only class based component.
+ */
